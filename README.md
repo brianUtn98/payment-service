@@ -4,9 +4,10 @@ NewCombin technical test for BackEnd Developer position.
 ## Cómo usar
 
 Para levantar el server de desarrollo, 
-````bash
+```bash
 npm run dev
 ```
+
 Al finalizar la traspilación Typescript -> Javascript, nos avisará que está escuchando en:
 [http://localhost:4000](http://localhost:4000)
 
