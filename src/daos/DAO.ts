@@ -1,4 +1,4 @@
-import { Query, FilterQuery, Document, Model } from "mongoose";
+import { Query, FilterQuery, Document, Model, Aggregate } from "mongoose";
 import IRead from "./interfaces/IRead";
 import IWrite from "./interfaces/IWrite";
 
@@ -26,6 +26,14 @@ class DAO implements IRead, IWrite{
     }
     deleteById(id: string): Query<any,any> {
         return this.model.findByIdAndDelete(id);
+    }
+    findGroupBy(filter: FilterQuery<Document<any, any, any>>,group: any): Aggregate<any>{
+        return this.model.aggregate([
+            {
+                $group: group
+            }
+            
+        ])
     }
 }
 
