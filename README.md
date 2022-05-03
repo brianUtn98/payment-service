@@ -1,6 +1,8 @@
 # payment-service
 NewCombin technical test for BackEnd Developer position.
 
+Esta sería una versión de 1° iteración, muchas cosas pueden ser mejoradas en próximas iteraciones.
+
 ## Cómo usar
 
 Para levantar el server de desarrollo, 
