@@ -4,7 +4,8 @@
   "description": "Task payment service - Built with NodeJS, ExpressJS, MongoDB and Typescript",
   "main": "./build/index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon ./src/index.ts"
+    "dev": "cross-env NODE_ENV=development nodemon ./src/index.ts",
+    "start": "tsc & node cross-env NODE_ENV=development ./build/src/index.js"
   },
   "repository": {
     "type": "git",
