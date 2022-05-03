@@ -15,5 +15,5 @@ export default interface TransactionDTO{
     amount: number;
     paymentDate: Date;
     barcode: string;
-    _id: string;
+    _id?: string;
 }

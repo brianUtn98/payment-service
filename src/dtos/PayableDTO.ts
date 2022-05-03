@@ -17,5 +17,5 @@ export default interface PayableDTO{
     paymentDate: Date;
     barcode: string;
     status: string;
-    _id: string;
+    _id?: string;
 }
