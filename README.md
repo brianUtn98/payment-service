@@ -25,7 +25,7 @@ En una aplicación real no se suele pushear el archivo .env al repositorio, pero
 
 ## Requerimientos completos
 
-1. Debe permitir crear una boleta de pago son la siguiente información, recibiendo la siguiente información [...]
+### 1. Debe permitir crear una boleta de pago son la siguiente información, recibiendo la siguiente información [...]
 Para crear una nueva boleta de pago, se debe realizar una request HTTP Post del siguiente modo:
 ```http
 POST http://localhost:4000/payables
@@ -40,7 +40,7 @@ content-type: application/json
 }
 ```
 
-2. Debe permitir realizar un pago (transacción), recibiendo la siguiente información [...]
+### 2. Debe permitir realizar un pago (transacción), recibiendo la siguiente información [...]
 Para realizar un pago, se debe realizar una request HTTP Post del siguiente modo:
 ```http
 POST http://localhost:4000/transactions
@@ -71,7 +71,7 @@ Algunas validaciones a tener en cuenta:
 * Al realizar un pago de un servicio, el monto pagado de una transacción debe coincidir con el monto a pagar. De lo contrario, se rechaza el pago.
 * El barcode debe coincidir con el de un payable existente, de lo contrario se recahazará el pago con un 404.
 
-3. Debe permitir listar aquellas boletas impagas en forma total o filtradas por tipo de servicio, devolviendo la siguiente información [...]
+### 3. Debe permitir listar aquellas boletas impagas en forma total o filtradas por tipo de servicio, devolviendo la siguiente información [...]
 
 Para que el endpoint de payments sea reutilizable, se agregan los filtros de "boletas impagas" y "filtradas por tipo de servicio" mediante query params. Si bien, se resuelve más de lo que se pide, el esfuerzo es el mismo y contribuye a una API más reutilizable, y más propensa a aceptar cambios futuros sin grandes inconvenientes. A continuación algunos ejemplos para clarificar.
 
@@ -173,7 +173,7 @@ GET http://localhost:4000/payables?serviceType=Electricidad&status=pending
 }
 ```
 
-4. Debe permitir listar los pagos (transacciones) entre un período de fechas, acumulando por día, devolviendo la siguiente información [...]
+### 4. Debe permitir listar los pagos (transacciones) entre un período de fechas, acumulando por día, devolviendo la siguiente información [...]
   
 Para satisfacer este requerimiento, primero definí una ruta auxiliar (aunque vale la pena tenerla, ya que es un get estándar).
 Para ver todas las transacciones
