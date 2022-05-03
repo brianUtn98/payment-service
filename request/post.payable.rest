@@ -2,10 +2,10 @@ POST http://localhost:4000/payables
 Content-Type: application/json
 
 {
-    "serviceType": "Electricidad",
-    "description": "Edenor",
+    "serviceType": "Agua",
+    "description": "AySA",
     "dueDate": "05-25-2022",
-    "amount": 3000,
-    "barcode": 123456789224,
+    "amount": 680,
+    "barcode": 623452789214,
     "status": "pending"
 }
