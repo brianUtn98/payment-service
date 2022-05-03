@@ -22,6 +22,7 @@ class PayableController {
         });
     }
 
+    // * Not used
     public findAll(request: Request, response: Response): void{
         this.dao.findAll().then((result: Array<PayableDTO>) => {
             return response.status(200).json(result.map((payable) => {
@@ -37,23 +38,42 @@ class PayableController {
     }
     
     public find(request: Request, response: Response): void{
-        const { query: { serviceType } } = request;
+        const { query: { serviceType,status } } = request;
+
+        console.log(request.query);
 
         if(!serviceType){
-            this.findAll(request,response);
+            this.dao.find(request.query).then((result: Array<PayableDTO>) => {
+                return response.status(200).json({
+                    count: result.length,
+                    data: result.map((payable) => {
+                        return {
+                            serviceType: payable.serviceType,
+                            dueDate: payable.dueDate,
+                            amount: payable.amount,
+                            barcode: payable.barcode,
+                            status: payable.status
+                        }
+                    })
+                })
+            })
         } else {
-            this.dao.find({serviceType}).then((result: Array<PayableDTO>) => {
-                return response.status(200).json(result.map((payable) => {
-                    return {
-                        dueDate: payable.dueDate,
-                        amount: payable.amount,
-                        barcode: payable.barcode,
-                        status: payable.status
-                    }
-                }))
+            this.dao.find(request.query).then((result: Array<PayableDTO>) => {
+                return response.status(200).json({
+                    count: result.length,
+                    data: result.map((payable) => {
+                        return {
+                            dueDate: payable.dueDate,
+                            amount: payable.amount,
+                            barcode: payable.barcode,
+                            status: payable.status
+                        }
+                    })
+                })
             })
         }
     }
+
     // ! Delete and update not implemented because is out of reach
 }
 
