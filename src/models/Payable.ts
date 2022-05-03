@@ -28,7 +28,8 @@ const payableSchema = new mongoose.Schema({
     },
     status: {
         type: String,
-        required: true
+        required: true,
+        enum: ["paid","pending"]
     }
 });
 

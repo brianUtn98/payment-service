@@ -3,7 +3,8 @@ import mongoose from "mongoose";
 const transactionSchema = new mongoose.Schema({
      paymentMethod: {
          type: String,
-         required: true
+         required: true,
+         enum: ["debit_card","credit_card","cash"]
      },
      cardNumber: {
          type: String
