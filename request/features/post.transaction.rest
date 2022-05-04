@@ -1,0 +1,9 @@
+POST http://localhost:4000/transactions
+Content-Type: application/json
+
+{
+    "paymentMethod": "cash",
+    "amount": 320,
+    "paymentDate": "05-01-2022",
+    "barcode": "460864919694"
+}
