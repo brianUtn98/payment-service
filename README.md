@@ -3,6 +3,19 @@ NewCombin technical test for BackEnd Developer position.
 
 Esta sería una versión de 1° iteración, muchas cosas pueden ser mejoradas en próximas iteraciones.
 
+## NodeJS
+
+## Dependencias
+* **express: Framework Http**.
+* cross-env: Para determinar entorno de ejecución.
+* dotenv: Para leer archivos de variables de entorno.
+* express-jsdoc-swagger: Genera documentación swagger a partir de comentarios.
+* helmet: Segurización.
+* mongoose: Library ODM para persistir documentos en una base de datos MongoDB.
+* morgan: Http request logger.
+* typescript.
+* nodemon.
+
 ## Cómo usar
 
 Para levantar el server de desarrollo, 
